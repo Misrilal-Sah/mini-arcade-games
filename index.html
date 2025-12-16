@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Arcade - Classic Games Collection</title>
+    <meta name="description" content="Play 17 classic games including Tic Tac Toe, Snake, Tetris, and more!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <button class="back-btn" id="backBtn" style="display: none;">
+            <span class="back-icon">←</span>
+            <span>Menu</span>
+        </button>
+        <h1 class="logo">🎮 Mini Arcade</h1>
+        <div class="header-stats">
+            <span class="stat" id="currentScore">Score: 0</span>
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme">🌙</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Game Launcher -->
+        <section class="launcher" id="launcher">
+            <h2 class="launcher-title">Choose Your Game</h2>
+            <p class="launcher-subtitle">Free to Play</p>
+            
+            <div class="games-grid">
+                <!-- Tic Tac Toe -->
+                <button class="game-card" data-game="tictactoe">
+                    <div class="game-icon">⭕❌</div>
+                    <h3>Tic Tac Toe</h3>
+                    <p>2 Players</p>
+                </button>
+
+                <!-- Connect Four -->
+                <button class="game-card" data-game="connect4">
+                    <div class="game-icon">🔴🟡</div>
+                    <h3>Connect Four</h3>
+                    <p>2 Players</p>
+                </button>
+
+                <!-- Snake -->
+                <button class="game-card" data-game="snake">
+                    <div class="game-icon">🐍</div>
+                    <h3>Snake</h3>
+                    <p>Single Player</p>
+                </button>
+
+                <!-- Memory Match -->
+                <button class="game-card" data-game="memory">
+                    <div class="game-icon">🃏</div>
+                    <h3>Memory Match</h3>
+                    <p>Single Player</p>
+                </button>
+
+                <!-- Whack a Mole -->
+                <button class="game-card" data-game="whackamole">
+                    <div class="game-icon">🦔</div>
+                    <h3>Whack-a-Mole</h3>
+                    <p>Single Player</p>
+                </button>
+
+                <!-- Simon Says -->
+                <button class="game-card" data-game="simon">
+                    <div class="game-icon">🎵</div>
+                    <h3>Simon Says</h3>
+                    <p>Memory Game</p>
+                </button>
+
+                <!-- Breakout -->
+                <button class="game-card" data-game="breakout">
+                    <div class="game-icon">🧱</div>
+                    <h3>Breakout</h3>
+                    <p>Single Player</p>
+                </button>
+
+                <!-- Lights Out -->
+                <button class="game-card" data-game="lightsout">
+                    <div class="game-icon">💡</div>
+                    <h3>Lights Out</h3>
+                    <p>Puzzle</p>
+                </button>
+
+                <!-- Sudoku -->
+                <button class="game-card" data-game="sudoku">
+                    <div class="game-icon">9</div>
+                    <h3>Sudoku</h3>
+                    <p>Logic Puzzle</p>
+                </button>
+
+                <!-- Hangman -->
+                <button class="game-card" data-game="hangman">
+                    <div class="game-icon">📝</div>
+                    <h3>Hangman</h3>
+                    <p>Word Game</p>
+                </button>
+
+                <!-- Number Guessing -->
+                <button class="game-card" data-game="numguess">
+                    <div class="game-icon">🔢</div>
+                    <h3>Number Guessing</h3>
+                    <p>Logic Game</p>
+                </button>
+
+                <!-- Tetris -->
+                <button class="game-card" data-game="tetris">
+                    <div class="game-icon">◼️◼️</div>
+                    <h3>Tetris</h3>
+                    <p>Single Player</p>
+                </button>
+
+                <!-- Pong -->
+                <button class="game-card" data-game="pong">
+                    <div class="game-icon">🏓</div>
+                    <h3>Pong</h3>
+                    <p>2 Players</p>
+                </button>
+
+                <!-- Flappy Bird -->
+                <button class="game-card" data-game="flappy">
+                    <div class="game-icon">🐤</div>
+                    <h3>Flappy Bird</h3>
+                    <p>Single Player</p>
+                </button>
+
+                <!-- Color Match -->
+                <button class="game-card" data-game="colormatch">
+                    <div class="game-icon">🎨</div>
+                    <h3>Color Match</h3>
+                    <p>Reaction Game</p>
+                </button>
+
+                <!-- Reaction Timer -->
+                <button class="game-card" data-game="reaction">
+                    <div class="game-icon">⚡</div>
+                    <h3>Reaction Timer</h3>
+                    <p>Speed Test</p>
+                </button>
+
+                <!-- Word Scramble -->
+                <button class="game-card" data-game="wordscramble">
+                    <div class="game-icon">ABC</div>
+                    <h3>Word Scramble</h3>
+                    <p>Word Game</p>
+                </button>
+
+                <!-- Pac-Man -->
+                <button class="game-card" data-game="pacman">
+                    <div class="game-icon">👻</div>
+                    <h3>Pac-Man</h3>
+                    <p>Arcade Classic</p>
+                </button>
+
+                <!-- Space Invaders -->
+                <button class="game-card" data-game="spaceinvaders">
+                    <div class="game-icon">👾</div>
+                    <h3>Space Invaders</h3>
+                    <p>Shooter</p>
+                </button>
+
+                <!-- Crossword -->
+                <button class="game-card coming-soon" data-game="coming-soon">
+                    <div class="game-icon">✏️</div>
+                    <h3>Crossword</h3>
+                    <p>Coming Soon</p>
+                </button>
+
+                <!-- Coming Soon 1 -->
+                <button class="game-card coming-soon" data-game="coming-soon">
+                    <div class="game-icon">🎯</div>
+                    <h3>Darts</h3>
+                    <p>Coming Soon</p>
+                </button>
+
+                <!-- Coming Soon 2 -->
+                <button class="game-card coming-soon" data-game="coming-soon">
+                    <div class="game-icon">🎰</div>
+                    <h3>Slot Machine</h3>
+                    <p>Coming Soon</p>
+                </button>
+
+                <!-- Coming Soon 3 -->
+                <button class="game-card coming-soon" data-game="coming-soon">
+                    <div class="game-icon">🃏</div>
+                    <h3>Blackjack</h3>
+                    <p>Coming Soon</p>
+                </button>
+
+                <!-- Coming Soon 4 -->
+                <button class="game-card coming-soon" data-game="coming-soon">
+                    <div class="game-icon">🎲</div>
+                    <h3>Dice Roll</h3>
+                    <p>Coming Soon</p>
+                </button>
+
+                <!-- Coming Soon 5 -->
+                <button class="game-card coming-soon" data-game="coming-soon">
+                    <div class="game-icon">🧮</div>
+                    <h3>Math Quiz</h3>
+                    <p>Coming Soon</p>
+                </button>
+            </div>
+        </section>
+
+        <!-- Game Container -->
+        <section class="game-container" id="gameContainer" style="display: none;">
+            <div class="game-header">
+                <h2 class="game-title" id="gameTitle">Game</h2>
+                <div class="game-info" id="gameInfo"></div>
+            </div>
+            
+            <div class="game-board" id="gameBoard"></div>
+            
+            <div class="game-controls">
+                <button class="btn btn-primary" id="resetBtn">🔄 New Game</button>
+                <button class="btn btn-secondary" id="instructionsBtn">📖 How to Play</button>
+            </div>
+
+            <div class="game-status" id="gameStatus"></div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Game Over</h3>
+                <button class="modal-close" id="modalClose">×</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="modalPlayAgain">Play Again</button>
+                <button class="btn btn-secondary" id="modalMenu">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+
+    <script src="games.js"></script>
+</body>
+</html>
